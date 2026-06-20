@@ -191,6 +191,20 @@ stm_bms/
 
 ---
 
+## TEST ET VALIDATION   
+![stm32](stm_bms/images/image6.png)  
+- La LED verte indique que la batterie (ou les cellules) est en état de charge.
+- Les LEDs rouges indiquent que la cellule correspondante est complètement chargée.
+  Dans ce cas, le système active le **balancing passif** afin d’équilibrer les cellules.
+Le microcontrôleur **STM32** reçoit la consigne de vitesse à commander depuis l’**Arduino**.
+
+Cette consigne est générée à l’aide d’un **potentiomètre**, permettant de régler la vitesse de manière analogique.
+
+- Arduino : acquisition de la consigne (potentiomètre)
+- STM32 : traitement et commande du système (contrôle moteur / charge selon le projet)
+
+![video](stm_bms/images/video1.mp4)
+  
 ## Auteurs
 
 **Cheikh Samb** — Élève-ingénieur ENSA Marrakech   [LinkedIn_SAMB_CHEIKH](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)  
