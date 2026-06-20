@@ -162,7 +162,7 @@ stm_bms/
 
 ---
 
-## Auteur
+## Auteurs
 
 **Cheikh Samb** — Élève-ingénieur ENSA Marrakech   [LinkedIn_SAMB_CHEIKH](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)  
 
