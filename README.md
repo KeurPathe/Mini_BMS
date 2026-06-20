@@ -2,7 +2,7 @@
 
 Système de gestion de batterie lithium 3 cellules (3S) développé sur **STM32 Blue Pill** avec supervision en temps réel, protections actives, équilibrage passif et contrôle moteur via PWM.
 
-![Scèma sur proteus](images/image1.png)
+![Scèma sur proteus](stm_bms/images/image1.png)
 
 ---
 
@@ -34,7 +34,7 @@ Le système est composé de deux microcontrôleurs qui communiquent via UART :
 
 ## ⚡ Bloc BMS — Mesure & Protection & Balancing
 
-![Bloc BMS](images/image2.png)
+![Bloc BMS](stm_bms/images/image2.png)
 
 ### Mesure des tensions cellules
 Les 3 cellules lithium sont mesurées via un pont diviseur de tension sur les canaux ADC (CH0, CH1, CH2) du STM32.
@@ -44,7 +44,7 @@ bat_Voltage[0] = Read_ADC(ADC_CHANNEL_0) / coeff_Res[0];
 bat_Voltage[1] = Read_ADC(ADC_CHANNEL_1) / coeff_Res[1] - bat_Voltage[0];
 bat_Voltage[2] = Read_ADC(ADC_CHANNEL_2) / coeff_Res[2] - (bat_Voltage[0] + bat_Voltage[1]);
 ```
-![Bloc_pont_diviseur](images/image3.png)
+![Bloc_pont_diviseur](stm_bms/images/image3.png)
 
 ### Seuils de protection
 
@@ -86,7 +86,7 @@ Le STM32 Blue Pill est le cerveau du système :
 
 ##  Bloc Moteur — Contrôle PWM
 
-![Moteur](images/image4.png)
+![Moteur](stm_bms/images/image4.png)
 
 La vitesse du moteur est contrôlée par **PWM via TIM1** du STM32. La commande vient de l'Arduino (potentiomètre → valeur 0-50 → UART → STM32).
 
@@ -106,7 +106,7 @@ void CMD_Vitesse() {
 ---
 
 ##  stm32 — pins utilisés
-![stm32](images/image5.png)
+![stm32](stm_bms/images/image5.png)
 
 ##  Bloc Arduino — Interface utilisateur
 
