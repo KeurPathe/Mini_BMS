@@ -203,7 +203,8 @@ Cette consigne est générée à l’aide d’un **potentiomètre**, permettant 
 - Arduino : acquisition de la consigne (potentiomètre)
 - STM32 : traitement et commande du système (contrôle moteur / charge selon le projet)
 
-![video](stm_bms/images/video1.mp4)
+
+[Voir la vidéo de démonstration](https://github.com/KeurPathe/Mini_BMS/releases/tag/v1.0)
   
 ## Auteurs
 
