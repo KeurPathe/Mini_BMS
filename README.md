@@ -2,7 +2,7 @@
 
 Système de gestion de batterie lithium 3 cellules (3S) développé sur **STM32 Blue Pill** avec supervision en temps réel, protections actives, équilibrage passif et contrôle moteur via PWM.
 
-![Scèma sur proteus](<img width="577" height="276" alt="{7F033095-848C-49F8-86BE-0225A8746DA6}" src="https://github.com/user-attachments/assets/25a4bdc1-05a7-40a3-90d8-8ba07daeb9db" />)
+![Scèma sur proteus](images/image1.png)
 
 ---
 
@@ -34,7 +34,7 @@ Le système est composé de deux microcontrôleurs qui communiquent via UART :
 
 ## ⚡ Bloc BMS — Mesure & Protection & Balancing
 
-![Bloc BMS](<img width="325" height="266" alt="{2D1EEF01-5ECB-4EDA-A841-9736AF7D6C31}" src="https://github.com/user-attachments/assets/8e6ed65a-4196-44d2-9067-587b1d437509" />)
+![Bloc BMS](images/image2.png)
 
 ### Mesure des tensions cellules
 Les 3 cellules lithium sont mesurées via un pont diviseur de tension sur les canaux ADC (CH0, CH1, CH2) du STM32.
@@ -44,7 +44,7 @@ bat_Voltage[0] = Read_ADC(ADC_CHANNEL_0) / coeff_Res[0];
 bat_Voltage[1] = Read_ADC(ADC_CHANNEL_1) / coeff_Res[1] - bat_Voltage[0];
 bat_Voltage[2] = Read_ADC(ADC_CHANNEL_2) / coeff_Res[2] - (bat_Voltage[0] + bat_Voltage[1]);
 ```
-![Bloc_pont_diviseur]()<img width="152" height="229" alt="{DA38ED46-C933-455C-9AE0-B3CE5FD4E3B6}" src="https://github.com/user-attachments/assets/0c5cdf1b-c510-4649-8a16-2182d1f6b572" />
+![Bloc_pont_diviseur](images/image3.png)
 
 ### Seuils de protection
 
@@ -86,8 +86,7 @@ Le STM32 Blue Pill est le cerveau du système :
 
 ##  Bloc Moteur — Contrôle PWM
 
-![Moteur](<img width="133" height="56" alt="{C31892F4-0076-414A-B97B-A3B5D45409D7}" src="https://github.com/user-attachments/assets/9730fa1a-5a58-4798-ae64-da60b5722b93" />
-)
+![Moteur](images/image4.png)
 
 La vitesse du moteur est contrôlée par **PWM via TIM1** du STM32. La commande vient de l'Arduino (potentiomètre → valeur 0-50 → UART → STM32).
 
@@ -105,6 +104,9 @@ void CMD_Vitesse() {
 > Si la tension pack descend sous **9.00 V**, le moteur est coupé automatiquement pour protéger la batterie.
 
 ---
+
+##  stm32 — pins utilisés
+![stm32](images/image5.png)
 
 ##  Bloc Arduino — Interface utilisateur
 
