@@ -1,24 +1,25 @@
-# 🔋 Battery Management System (BMS) — Lithium 3S
+# Battery Management System (BMS) — Lithium 3S
 
 Système de gestion de batterie lithium 3 cellules (3S) développé sur **STM32 Blue Pill** avec supervision en temps réel, protections actives, équilibrage passif et contrôle moteur via PWM.
 
-![Schéma complet](images/schema_full.png)
+![Scèma sur proteus](<img width="546" height="249" alt="{0912E3C4-5AB6-4E86-8594-5F878AE469A8}" src="https://github.com/user-attachments/assets/3192fe9a-b092-4f34-8e36-8da8f28c6898" />
+)
 
 ---
 
-## 📌 Fonctionnalités
+## Fonctionnalités
 
-- ✅ Surveillance en temps réel : tension par cellule, tension pack, courant
-- ✅ Protections : surtension, sous-tension, surcourant
-- ✅ Équilibrage cellulaire passif (Cell Balancing)
-- ✅ Contrôle de vitesse moteur via PWM (TIM1)
-- ✅ Affichage LCD I²C (tensions, courant, vitesse)
-- ✅ Communication UART avec Arduino (commande de vitesse)
-- ✅ Affichage 7 segments (vitesse côté Arduino)
+- Surveillance en temps réel : tension par cellule, tension pack, courant
+- Protections : surtension, sous-tension, surcourant
+- Équilibrage cellulaire passif (Cell Balancing)
+- Contrôle de vitesse moteur via PWM (TIM1)
+- Affichage LCD I²C (tensions, courant, vitesse)
+- Communication UART avec Arduino (commande de vitesse)
+- Affichage 7 segments (vitesse côté Arduino)
 
 ---
 
-## 🏗️ Architecture du système
+## Architecture du système
 
 Le système est composé de deux microcontrôleurs qui communiquent via UART :
 
@@ -34,7 +35,8 @@ Le système est composé de deux microcontrôleurs qui communiquent via UART :
 
 ## ⚡ Bloc BMS — Mesure & Protection & Balancing
 
-![Bloc BMS](images/schema_bms_block.png)
+![Bloc BMS](<img width="324" height="230" alt="{096B8FA5-97BA-4F1E-A854-180782E5F966}" src="https://github.com/user-attachments/assets/2e18c0d7-9110-4f70-b7b6-19a28f7cc014" />
+)
 
 ### Mesure des tensions cellules
 Les 3 cellules lithium sont mesurées via un pont diviseur de tension sur les canaux ADC (CH0, CH1, CH2) du STM32.
@@ -44,6 +46,7 @@ bat_Voltage[0] = Read_ADC(ADC_CHANNEL_0) / coeff_Res[0];
 bat_Voltage[1] = Read_ADC(ADC_CHANNEL_1) / coeff_Res[1] - bat_Voltage[0];
 bat_Voltage[2] = Read_ADC(ADC_CHANNEL_2) / coeff_Res[2] - (bat_Voltage[0] + bat_Voltage[1]);
 ```
+![Bloc_pont_diviseur]()<img width="152" height="229" alt="{DA38ED46-C933-455C-9AE0-B3CE5FD4E3B6}" src="https://github.com/user-attachments/assets/0c5cdf1b-c510-4649-8a16-2182d1f6b572" />
 
 ### Seuils de protection
 
@@ -74,8 +77,6 @@ void balance_Cell() {
 
 ## Bloc STM32 + Affichage LCD
 
-![STM32 et LCD](images/schema_stm_lcd.png)
-
 Le STM32 Blue Pill est le cerveau du système :
 - **ADC1** : lecture tension des 3 cellules + courant (ACS712 sur CH3)
 - **TIM1 PWM** : contrôle vitesse moteur
@@ -87,7 +88,8 @@ Le STM32 Blue Pill est le cerveau du système :
 
 ##  Bloc Moteur — Contrôle PWM
 
-![Moteur](images/schema_motor.png)
+![Moteur](<img width="133" height="56" alt="{C31892F4-0076-414A-B97B-A3B5D45409D7}" src="https://github.com/user-attachments/assets/9730fa1a-5a58-4798-ae64-da60b5722b93" />
+)
 
 La vitesse du moteur est contrôlée par **PWM via TIM1** du STM32. La commande vient de l'Arduino (potentiomètre → valeur 0-50 → UART → STM32).
 
@@ -145,25 +147,24 @@ uart.write((uint8_t)vitesse);
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
-BMS-Lithium-3S/
-├── STM32/
-│   └── main.c              # Code principal STM32
-├── Arduino/
-│   └── arduino_speed.ino   # Code Arduino interface
-├── images/
-│   └── schema_full.png     # Schéma Proteus complet
+stm_bms/
+├── arduino/
+│   └── sketch_jun14a              # Code arduino interface
+├── proteus/
+│   └── proteus   # schèma du balancing et du pond diviseur sur proteus
+├── stm/
+│   └── stm_bms     # code principale du projet (stm32)
 └── README.md
 ```
 
 ---
 
-## 👤 Auteur
+## Auteur
 
 **Cheikh Samb** — Élève-ingénieur ENSA Marrakech   [LinkedIn](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)
-**Iruno  Lefort** — Élève-ingénieur ENSA Marrakech   [LinkedIn](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)
-**Bill-ELvis** — Élève-ingénieur ENSA Marrakech 
-Systèmes Électroniques Embarqués et Commande des Systèmes   [LinkedIn](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)
-
+**Iruno  Lefort** — Élève-ingénieur ENSA Marrakech   [LinkedIn](https://www.linkedin.com/in/iruno-lefort-5b3229346/)
+**Bill-ELvis** — Élève-ingénieur ENSA Marrakech    [LinkedIn](https://www.linkedin.com/in/bill-elvis-somakou-313976299/)
+**Systèmes Électroniques Embarqués et Commande des Systèmes**
