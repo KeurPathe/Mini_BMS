@@ -1,5 +1,34 @@
 # Battery Management System (BMS) — Lithium 3S
 
+## 🧠 Vue d’ensemble du système
+
+Le Mini BMS (Battery Management System) est conçu pour surveiller et protéger un pack de batteries lithium-ion utilisé dans des systèmes embarqués et de robotique.
+
+Le système garantit un fonctionnement sûr en surveillant en continu les paramètres électriques essentiels et en appliquant des protections lorsque nécessaire.
+
+### ⚙️ Fonctions principales :
+- Surveillance des tensions de chaque cellule
+- Détection des surtensions et sous-tensions
+- Protection de la batterie contre les états de charge/décharge dangereux
+- (Optionnel) Mesure du courant pour le contrôle de charge
+- Sécurisation du fonctionnement des packs de batteries lithium
+
+### Configuration de la batterie :
+- Pack de batteries lithium-ion (exemple : configuration 3S / 4S)
+- Tension nominale : dépend de la configuration utilisée
+- Utilisation : systèmes embarqués et robotique
+
+### Principe de fonctionnement :
+1. Le système mesure en continu les tensions des cellules  
+2. Il compare les valeurs aux seuils de sécurité définis  
+3. En cas d’anomalie (surtension ou sous-tension) :  
+   - La charge ou la décharge est coupée  
+4. Le système revient au fonctionnement normal lorsque les tensions redeviennent sûres  
+
+### Avertissement de sécurité :
+Les batteries lithium sont sensibles et peuvent être dangereuses en cas de mauvaise utilisation.  
+Ce système permet de réduire les risques, mais des tests et une manipulation correcte restent indispensables.
+
 Système de gestion de batterie lithium 3 cellules (3S) développé sur **STM32 Blue Pill** avec supervision en temps réel, protections actives, équilibrage passif et contrôle moteur via PWM.
 
 ![Scèma sur proteus](stm_bms/images/image1.png)
