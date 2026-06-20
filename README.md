@@ -2,8 +2,7 @@
 
 Système de gestion de batterie lithium 3 cellules (3S) développé sur **STM32 Blue Pill** avec supervision en temps réel, protections actives, équilibrage passif et contrôle moteur via PWM.
 
-![Scèma sur proteus](<img width="546" height="249" alt="{0912E3C4-5AB6-4E86-8594-5F878AE469A8}" src="https://github.com/user-attachments/assets/3192fe9a-b092-4f34-8e36-8da8f28c6898" />
-)
+![Scèma sur proteus](<img width="577" height="276" alt="{7F033095-848C-49F8-86BE-0225A8746DA6}" src="https://github.com/user-attachments/assets/25a4bdc1-05a7-40a3-90d8-8ba07daeb9db" />)
 
 ---
 
@@ -35,8 +34,7 @@ Le système est composé de deux microcontrôleurs qui communiquent via UART :
 
 ## ⚡ Bloc BMS — Mesure & Protection & Balancing
 
-![Bloc BMS](<img width="324" height="230" alt="{096B8FA5-97BA-4F1E-A854-180782E5F966}" src="https://github.com/user-attachments/assets/2e18c0d7-9110-4f70-b7b6-19a28f7cc014" />
-)
+![Bloc BMS](<img width="325" height="266" alt="{2D1EEF01-5ECB-4EDA-A841-9736AF7D6C31}" src="https://github.com/user-attachments/assets/8e6ed65a-4196-44d2-9067-587b1d437509" />)
 
 ### Mesure des tensions cellules
 Les 3 cellules lithium sont mesurées via un pont diviseur de tension sur les canaux ADC (CH0, CH1, CH2) du STM32.
