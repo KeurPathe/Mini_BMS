@@ -192,7 +192,7 @@ stm_bms/
 ---
 
 ## TEST ET VALIDATION   
-![stm32](stm_bms/images/image6.png)  
+![stm32](stm_bms/images/image6.jpeg)  
 - La LED verte indique que la batterie (ou les cellules) est en état de charge.
 - Les LEDs rouges indiquent que la cellule correspondante est complètement chargée.
   Dans ce cas, le système active le **balancing passif** afin d’équilibrer les cellules.
