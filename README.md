@@ -164,7 +164,10 @@ stm_bms/
 
 ## Auteur
 
-**Cheikh Samb** — Élève-ingénieur ENSA Marrakech   [LinkedIn](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)
-**Iruno  Lefort** — Élève-ingénieur ENSA Marrakech   [LinkedIn](https://www.linkedin.com/in/iruno-lefort-5b3229346/)
-**Bill-ELvis** — Élève-ingénieur ENSA Marrakech    [LinkedIn](https://www.linkedin.com/in/bill-elvis-somakou-313976299/)
+**Cheikh Samb** — Élève-ingénieur ENSA Marrakech   [LinkedIn_SAMB_CHEIKH](https://www.linkedin.com/in/cheikh-samb-a46a982a8/)  
+
+**Iruno  Lefort** — Élève-ingénieur ENSA Marrakech   [LinkedIn_Lefort](https://www.linkedin.com/in/iruno-lefort-5b3229346/)  
+
+**Bill-ELvis** — Élève-ingénieur ENSA Marrakech    [LinkedIn_Elvis](https://www.linkedin.com/in/bill-elvis-somakou-313976299/)  
+
 **Systèmes Électroniques Embarqués et Commande des Systèmes**
